@@ -1,4 +1,42 @@
 <?php 
+	include '../dbconnect.php';
+	?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Export Data Pesanan</title>
+</head>
+<body>
+	<style type="text/css">
+	body{
+		font-family: sans-serif;
+	}
+	table{
+		margin: 20px auto;
+		border-collapse: collapse;
+	}
+	table th,
+	table td{
+		border: 1px solid #3c3c3c;
+		padding: 3px 8px;
+ 
+	}
+	a{
+		background: blue;
+		color: #fff;
+		padding: 8px 10px;
+		text-decoration: none;
+		border-radius: 2px;
+	}
+	</style>
+ 
+	<?php
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Data Pesanan.xls");
+	?>
+ 
+ <?php 
 	session_start();
 	include '../dbconnect.php';
 	date_default_timezone_set("Asia/Bangkok");
@@ -8,38 +46,6 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-	<link rel="icon" 
-      type="image/png" 
-      href="../favicon.png">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kelola Pesanan - Dream Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/metisMenu.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
-	
-    <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<!-- Start datatable css -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
-	
-    <!-- others css -->
-    <link rel="stylesheet" href="assets/css/typography.css">
-    <link rel="stylesheet" href="assets/css/default-css.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <!-- modernizr css -->
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -54,37 +60,6 @@
     <!-- page container area start -->
     <div class="page-container">
         <!-- sidebar menu area start -->
-        <div class="sidebar-menu">
-            <div class="main-menu">
-                <div class="menu-inner">
-                    <nav>
-                        <ul class="metismenu" id="menu">
-							<li><a href="index.php"><span>Home</span></a></li>
-							<li><a href="../"><span>Kembali ke Toko</span></a></li>
-							<li class="active">
-                                <a href="manageorder.php"><i class="ti-dashboard"></i><span>Kelola Pesanan</span></a>
-                            </li>
-							<li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout"></i><span>Kelola Toko
-                                    </span></a>
-                                <ul class="collapse">
-                                    <li><a href="kategori.php">Kategori</a></li>
-                                    <li><a href="produk.php">Produk</a></li>
-									<li><a href="pembayaran.php">Metode Pembayaran</a></li>
-                                </ul>
-                            </li>
-							<li><a href="customer.php"><span>Kelola Pelanggan</span></a></li>
-							<li><a href="user.php"><span>Kelola Staff</span></a></li>
-                            <li>
-                                <a href="../logout.php"><span>Logout</span></a>
-                                
-                            </li>
-                            
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
         <!-- sidebar menu area end -->
         <!-- main content area start -->
         <div class="main-content">
@@ -135,7 +110,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-sm-flex justify-content-between align-items-center">
-									<h2>Daftar Pesanan</h2>
+                                <h2 style="text-align:center">Data Pesanan</h2>
 								</div>
                                     <div class="data-tables datatable-dark">
 										 <table id="dataTable3" class="display" style="width:100%"><thead class="thead-dark">
@@ -195,10 +170,7 @@
 										</tbody>
 										</table>
                                         </div>
-                                    <div>
-									<a href="datapesanan.php" target="_blank" class="btn btn-info">Export Data</a>
-                                </div>
-                                    </div>
+                                
 									
                             </div>
                         </div>
@@ -209,52 +181,7 @@
                 <!-- row area start-->
             </div>
         </div>
-        <!-- main content area end -->
-        <!-- footer area start-->
-        <footer>
-            <div class="footer-area">
-                <p>By Dream Store</p>
-            </div>
-        </footer>
-        <!-- footer area end-->
-    </div>
-    <!-- page container area end -->
-	
-	<!-- modal input -->
-			<div id="myModal" class="modal fade">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="modal-title">Masukkan stok manual</h4>
-						</div>
-						<div class="modal-body">
-							<form action="tmb_brg_act.php" method="post">
-								<div class="form-group">
-									<label>Nama</label>
-									<input name="nama" type="text" class="form-control" placeholder="Nama Barang" required>
-								</div>
-								<div class="form-group">
-									<label>Jenis</label>
-									<input name="jenis" type="text" class="form-control" placeholder="Jenis / Kategori Barang">
-								</div>
-								<div class="form-group">
-									<label>Stock</label>
-									<input name="stock" type="number" min="0" class="form-control" placeholder="Qty">
-								</div>
-								<div class="form-group">
-									<label>Harga</label>
-									<input name="harga" type="number" min="0" class="form-control" placeholder="Harga">
-								</div>
-
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-								<input type="submit" class="btn btn-primary" value="Simpan">
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+    
 	
 	<script>	
 	$(document).ready(function() {
@@ -267,15 +194,7 @@
 	} );
 	</script>
 	
-	<!-- jquery latest version -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <!-- bootstrap 4 js -->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/metisMenu.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
-    <script src="assets/js/jquery.slicknav.min.js"></script>
+
 		<!-- Start datatable js -->
 	 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>

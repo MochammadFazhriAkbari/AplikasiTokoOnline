@@ -37,6 +37,7 @@ $timenow = date("j-F-Y-h:i:s A");
 <html>
 <head>
 <title>DREAM STORE- Masuk</title>
+<link rel="shorcut icon" type="=image/png" href="icon/logo.png"/>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,6 +45,7 @@ $timenow = date("j-F-Y-h:i:s A");
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
+<link rel="shortcut icon" href="img/logo.png" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- font-awesome icons -->
@@ -195,23 +197,39 @@ $timenow = date("j-F-Y-h:i:s A");
 <!-- //footer -->
 <div class="footer">
 		<div class="container">
-			<div class="w3_footer_grids">
-				<div class="col-md-4 w3_footer_grid">
-					<h3>Hubungi Kami</h3>
+		<div class="w3_footer_grids">
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Contact</h3>
 					
 					<ul class="address">
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Dream Store, Bogor.</li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@email">dreamstorebgr@gmail.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+62 8970 674 135</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Jl. Gunung Putri Selatan, Bogor.</li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">dreamstorebgr@gmail.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+(62) 8970 674 135</li>
 					</ul>
 				</div>
 				<div class="col-md-3 w3_footer_grid">
-					<h3>Tentang Kami</h3>
+				<h3>Social Media</h3>
+					<ul class="address">
+					<li><a href="https://www.instagram.com/dreamstorebgr/" class="w3_agile_instagram"><i class="fa fa-instagram" aria-hidden="true"></i>Dream Store Bogor</a></li>
+						<li><a href="https://www.facebook.com/moch.fazhriakbari/" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Dream Store Bogor</a></li>
+						<li><a href="https://twitter.com/DreamStoreBGR" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Dream Store Bogor</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Payment</h3>
+					<ul class="address">
+					<li><a href="" class="w3_agile_instagram"><i class="fa fa-bank" aria-hidden="true"></i>BCA</a></li>
+						<li><a href="" class="w3_agile_facebook"><i class="fa fa-bank" aria-hidden="true"></i>MANDIRI</a></li>
+						<li><a href="" class="agile_twitter"><i class="fa fa-bank" aria-hidden="true"></i>DANA</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+				<h3>Tentang Kami</h3>
 					<ul class="info"> 
 						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
 						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">How To</a></li>
 						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">FAQ</a></li>
-					</ul>
+					</ul>>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -225,21 +243,6 @@ $timenow = date("j-F-Y-h:i:s A");
 		</div>
 		
 	</div>	
-	<div class="footer-botm">
-			<div class="container">
-				<div class="w3layouts-foot">
-					<ul>
-						<li><a href="#" class="w3_agile_instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="payment-w3ls">	
-					<img src="images/card.png" alt=" " class="img-responsive">
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
 <!-- //footer -->	
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

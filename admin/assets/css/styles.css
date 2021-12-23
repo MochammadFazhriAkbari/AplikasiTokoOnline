@@ -110,7 +110,7 @@
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: #303641;
+    background: black;
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -816,7 +816,7 @@ ul.breadcrumbs {
 .single-report .icon {
     font-size: 32px;
     color: #fff;
-    background: var(--primary-color);
+    background: orange;
     height: 95px;
     width: 100px;
     text-align: right;

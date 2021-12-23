@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2021 pada 05.23
+-- Waktu pembuatan: 26 Okt 2021 pada 13.53
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 8.0.8
 
@@ -42,7 +42,15 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`idcart`, `orderid`, `userid`, `tglorder`, `status`) VALUES
 (10, '15wKVT0nej25Y', 2, '2020-03-16 12:10:42', 'Selesai'),
 (11, '15Swf8Ye0Fm.M', 2, '2020-03-16 12:17:34', 'Cart'),
-(12, '15PzF03ejd8W2', 1, '2020-05-13 02:40:48', 'Confirmed');
+(12, '15PzF03ejd8W2', 1, '2020-05-13 02:40:48', 'Confirmed'),
+(13, '16cwPJNnCRgXA', 4, '2021-09-03 04:09:14', 'Confirmed'),
+(14, '16lUhyRfRSXIs', 4, '2021-09-03 08:02:35', 'Confirmed'),
+(15, '16kJY8LJfmv2o', 6, '2021-09-06 07:05:52', 'Confirmed'),
+(16, '16YeN/S.6klBg', 6, '2021-09-06 07:09:53', 'Confirmed'),
+(17, '16vQUk0NmMJfU', 9, '2021-10-24 13:25:23', 'Payment'),
+(18, '16toLX/Kf/25w', 9, '2021-10-24 13:31:52', 'Confirmed'),
+(19, '16jHozrDLl6Qw', 10, '2021-10-26 09:55:24', 'Confirmed'),
+(20, '16A8NrabjICeY', 1, '2021-10-26 09:58:23', 'Confirmed');
 
 -- --------------------------------------------------------
 
@@ -63,7 +71,17 @@ CREATE TABLE `detailorder` (
 
 INSERT INTO `detailorder` (`detailid`, `orderid`, `idproduk`, `qty`) VALUES
 (13, '15wKVT0nej25Y', 1, 100),
-(14, '15PzF03ejd8W2', 2, 1);
+(14, '15PzF03ejd8W2', 2, 1),
+(15, '16cwPJNnCRgXA', 1, 3),
+(16, '16lUhyRfRSXIs', 1, 3),
+(17, '16kJY8LJfmv2o', 6, 1),
+(18, '16kJY8LJfmv2o', 2, 1),
+(19, '16YeN/S.6klBg', 3, 1),
+(20, '16lUhyRfRSXIs', 3, 1),
+(21, '16vQUk0NmMJfU', 1, 1),
+(22, '16toLX/Kf/25w', 1, 2),
+(23, '16jHozrDLl6Qw', 1, 1),
+(24, '16A8NrabjICeY', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -82,9 +100,9 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`idkategori`, `namakategori`, `tgldibuat`) VALUES
-(1, 'Bunga Tangkai', '2019-12-20 07:28:34'),
-(2, 'Bunga Papan', '2019-12-20 07:34:17'),
-(3, 'Bunga Hidup', '2020-03-16 12:15:40');
+(1, 'T-shirt', '2019-12-20 07:28:34'),
+(2, 'Hoodie', '2019-12-20 07:34:17'),
+(3, 'Shoes', '2020-03-16 12:15:40');
 
 -- --------------------------------------------------------
 
@@ -107,7 +125,14 @@ CREATE TABLE `konfirmasi` (
 --
 
 INSERT INTO `konfirmasi` (`idkonfirmasi`, `orderid`, `userid`, `payment`, `namarekening`, `tglbayar`, `tglsubmit`) VALUES
-(1, '15PzF03ejd8W2', 1, 'Bank BCA', 'Admin', '2020-05-16', '2020-05-13 02:41:51');
+(1, '15PzF03ejd8W2', 1, 'Bank BCA', 'Admin', '2020-05-16', '2020-05-13 02:41:51'),
+(2, '16cwPJNnCRgXA', 4, 'Bank BCA', 'AN LARE  TAFNA FARUQ', '2021-12-21', '2021-09-06 07:03:49'),
+(3, '16kJY8LJfmv2o', 6, 'Bank BCA', 'AN ALIF FADILLAH', '2003-12-13', '2021-09-06 07:09:11'),
+(4, '16YeN/S.6klBg', 6, 'Bank Mandi', 'AN ALIF FADILLAH', '2021-12-31', '2021-09-06 15:57:53'),
+(5, '16lUhyRfRSXIs', 4, 'DANA', 'LARE TAFNA FARUQ', '2021-12-10', '2021-10-13 01:00:54'),
+(6, '16toLX/Kf/25w', 9, 'Bank BCA', 'aji', '2021-12-20', '2021-10-24 13:35:32'),
+(7, '16jHozrDLl6Qw', 10, 'DANA', 'KEVIN', '2021-10-26', '2021-10-26 09:56:40'),
+(8, '16A8NrabjICeY', 1, 'Bank BCA', 'ADMIN', '2021-10-26', '2021-10-26 09:59:09');
 
 -- --------------------------------------------------------
 
@@ -134,7 +159,14 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`userid`, `namalengkap`, `email`, `password`, `notelp`, `alamat`, `tgljoin`, `role`, `lastlogin`) VALUES
 (1, 'Admin', 'admin', '$2y$10$GJVGd4ji3QE8ikTBzNyA0uLQhiGd6MirZeSJV1O6nUpjSVp1eaKzS', '01234567890', 'Indonesia', '2020-03-16 11:31:17', 'Admin', NULL),
 (2, 'Guest', 'guest', '$2y$10$xXEMgj5pMT9EE0QAx3QW8uEn155Je.FHH5SuIATxVheOt0Z4rhK6K', '01234567890', 'Indonesia', '2020-03-16 11:30:40', 'Member', NULL),
-(3, 'Mochammad Fazhri Akbari', 'mhmmdfazhri@gmail.com', '$2y$10$osZY9JaHqdZ90yiMgC9tN./4fxJu8wGMs/y749U2DQomByeYRddl.', '08970674135', 'Gunung Putri Selatan', '2021-09-02 14:06:30', 'Member', NULL);
+(3, 'Mochammad Fazhri Akbari', 'mhmmdfazhri@gmail.com', '$2y$10$osZY9JaHqdZ90yiMgC9tN./4fxJu8wGMs/y749U2DQomByeYRddl.', '08970674135', 'Gunung Putri Selatan', '2021-09-02 14:06:30', 'Member', NULL),
+(4, 'lare tafna faruq', 'lare@gmail.com', '$2y$10$4rrNupF2PXFsrpZXnzUTKOW2JEyCFcEPltW8kW/SVsCEEdnTFFKmC', '0897123214', 'Griya', '2021-09-03 04:07:38', 'Member', NULL),
+(5, 'Lare Tafna Faruq', 'lare@gmail.com', '$2y$10$SNyx9xgAh5YZP10IDa7kO.apIdvWoWLI3EGAERup3VaZqZK3/Tpiq', '08175144112', 'Griya', '2021-09-03 08:02:00', 'Member', NULL),
+(6, 'alip', 'alip@gmail.com', '$2y$10$MaHJ4pCASW67wWtUjs7Q7OdjPwajjFeCcv22mhl1NubhQwHbKFN5.', '086028432', 'griya', '2021-09-06 07:05:35', 'Member', NULL),
+(7, 'Faqih kamil', 'fukmil@gmail.com', '$2y$10$PGwA1MOSibJghCL3ePD9HuYR/oWWHboFjJpuyS7W988hhafDFrxjK', '0879371393', 'Griya', '2021-09-23 05:34:02', 'Member', NULL),
+(8, 'aswd', 'aswd@gmail.com', '$2y$10$6Lv6WqzYUn3ARSxuJU8xoe9Hv/JRMquQjSb0bLH.cT7IagbjYAhc6', '09888809-9', 'griya', '2021-09-23 05:38:47', 'Member', NULL),
+(9, 'aji', 'aji@gmail.com', '$2y$10$nuzbhfawYIsBnqmy6RD4kOlxHufrA.E2QSVZTVGxredNATDzJolZa', '081313113', 'gunung putri', '2021-10-24 13:25:06', 'Member', NULL),
+(10, 'kevin', 'kevin@gmail.com', '$2y$10$Dk6hqJgRTZnqY8Gd5BF9fOtUezosUYrtkXniAZbQMTruMiUqvNSua', '0801823182312', 'Citeureup', '2021-10-26 09:54:50', 'Member', NULL);
 
 -- --------------------------------------------------------
 
@@ -155,9 +187,9 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`no`, `metode`, `norek`, `logo`, `an`) VALUES
-(1, 'Bank BCA', '13131231231', 'images/bca.jpg', 'Tokopekita'),
-(2, 'Bank Mandiri', '943248844843', 'images/mandiri.jpg', 'Tokopekita'),
-(3, 'DANA', '0882313132123', 'images/dana.png', 'Tokopekita');
+(1, 'Bank BCA', '13131231231', 'images/bca.jpg', 'DreamStore'),
+(2, 'Bank Mandiri', '943248844843', 'images/mandiri.jpg', 'DreamStore'),
+(3, 'DANA', '0882313132123', 'images/dana.png', 'DreamStore');
 
 -- --------------------------------------------------------
 
@@ -182,9 +214,22 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`idproduk`, `idkategori`, `namaproduk`, `gambar`, `deskripsi`, `rate`, `hargabefore`, `hargaafter`, `tgldibuat`) VALUES
-(1, 1, 'Baju Erigo', 'produk/erigo.jpg', 'Ini baju sejuta umat', 5, 130000, 100000, '2019-12-20 09:10:26'),
-(2, 1, 'Mawar Putih', 'produk/15kwuDMbYtraw.png', 'Setangkai mawar putih', 4, 24000, 19500, '2019-12-20 09:24:13'),
-(3, 3, 'Bunga Hidup', 'produk/15Ak7lFMfvuJc.jpg', 'Bunga Hidup', 5, 25000, 15000, '2020-03-16 12:16:53');
+(1, 1, 'T-shirt Thrasher Black', 'produk/thrasher.png', 'Ukuran Size L\r\nOriginal 100%', 5, 400000, 350000, '2019-12-20 09:10:26'),
+(2, 2, 'Hoddie Thrasher Black', 'produk/hoddie.png', 'Ukuran Size L\r\nOrignal 100%', 4, 700000, 600000, '2019-12-20 09:24:13'),
+(3, 3, 'Slipon Checkerboard Black Whit', 'produk/cheker.png', 'Us 42 Man\r\nBlack White', 5, 800000, 750000, '2020-03-16 12:16:53'),
+(5, 3, 'SK8 Hi Black/White', 'produk/vans.png', 'Us 42 Man\r\nBlack White', 5, 850000, 800000, '2020-03-16 12:16:53'),
+(6, 3, 'Converse Hi Black/White', 'produk/converse.png', 'Us 42 Man\r\nBlack White', 5, 800000, 750000, '2020-03-16 12:16:53'),
+(7, 1, 'T-shirt Thrasher Navy', 'produk/navy.png', 'Ukuran Size L\r\nOriginal 100%', 5, 400000, 350000, '2020-03-16 12:16:53'),
+(8, 1, 'T-shirt Thrasher White', 'produk/white.png', 'Ukuran Size L\r\nOriginal 100%', 5, 400000, 350000, '2019-12-20 09:10:26'),
+(9, 2, 'Hoddie Thrasher Navy', 'produk/biru.png', 'Ukuran Size L\r\nOrignal 100%', 4, 700000, 600000, '2019-12-20 09:24:13'),
+(10, 2, 'Hoodie Thrasher White', 'produk/jaket putih.png', 'Ukuran Size L\r\nOriginal 100%', 4, 700000, 550000, '2019-12-20 09:10:26'),
+(11, 1, 'T-shirt Kevin Glasses Black', 'produk/baju 2.png', 'Ukuran Size L\r\nOriginal 100%', 4, 200000, 150000, '2019-12-20 09:10:26'),
+(12, 1, 'T-shirt Kevin Glasses White', 'produk/baju 1.png', 'Ukuran Size L\r\nOriginal 100%', 4, 200000, 150000, '2019-12-20 09:10:26'),
+(13, 1, 'T-shirt Avatar Udin Black', 'produk/avatar.png', 'Ukuran Size L\r\nOriginal 100%', 3, 200000, 150000, '2019-12-20 09:10:26'),
+(14, 1, 'T-shirt Kevin Stars White', 'produk/kevin.png', 'Ukuran Size L\r\nOriginal 100%', 4, 200000, 150000, '2019-12-20 09:10:26'),
+(15, 1, 'T-shirt ZCN X Thanos Black', 'produk/jhong.png', 'Ukuran Size L\r\nOriginal 100%', 3, 200000, 150000, '2019-12-20 09:10:26'),
+(16, 1, 'T-shirt Zhong China Black', 'produk/broolee.png', 'Ukuran Size L\r\nOriginal 100%', 3, 200000, 150000, '2019-12-20 09:10:26'),
+(17, 1, 'T-shirt Broole White', 'produk/sponsor.png', 'Ukuran Size L\r\nOriginal 100%', 3, 200000, 150000, '2019-12-20 09:10:26');
 
 --
 -- Indexes for dumped tables
@@ -246,13 +291,13 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `detailorder`
 --
 ALTER TABLE `detailorder`
-  MODIFY `detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
@@ -264,13 +309,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
-  MODIFY `idkonfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idkonfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
@@ -282,7 +327,7 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
